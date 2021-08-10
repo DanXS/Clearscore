@@ -24,10 +24,10 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxScore">
-                                        <real key="value" value="700"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="score">
-                                        <real key="value" value="600"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -41,6 +41,9 @@
                             <constraint firstItem="NOC-Ua-Uua" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wgh-9Y-L1H"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="creditScoreView" destination="NOC-Ua-Uua" id="uwI-hM-9Xj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -40,31 +40,31 @@ class CreditScoreView: UIView {
             // Draw arc - note context is flipped in iOS so using counter clockwise arc
             context.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
             context.drawPath(using: .fillStroke)
+            // Draw the black score text
+            UIGraphicsPushContext(context)
+            let blackFont = UIFont.systemFont(ofSize: 30)
+            var string = NSAttributedString(string: "Your credit score is", attributes: [NSAttributedString.Key.font: blackFont])
+            string.draw(at: CGPoint(x: center.x-120.0, y: center.y-70.0))
+            UIGraphicsPopContext()
+            UIGraphicsPushContext(context)
+            string = NSAttributedString(string: "out of \(Int(maxScore))", attributes: [NSAttributedString.Key.font: blackFont])
+            string.draw(at: CGPoint(x: center.x-80.0, y: center.y+60.0))
+            UIGraphicsPopContext()
+            // Draw the score text
+            UIGraphicsPushContext(context)
+            let scoreFont = UIFont.systemFont(ofSize: 90)
+            string = NSAttributedString(string: "\(Int(score))", attributes: [NSAttributedString.Key.font: scoreFont, NSAttributedString.Key.foregroundColor : UIColor.orange])
+            // Small hack to gestimate centering
+            var x_offset : CGFloat = 80.0
+            if score < 10 {
+                x_offset = 40.0
+            }
+            else if score < 100 {
+                x_offset = 60.0
+            }
+            string.draw(at: CGPoint(x: center.x - x_offset, y: center.y-40.0))
+            UIGraphicsPopContext()
         }
-        // Draw the black score text
-        UIGraphicsPushContext(context)
-        let blackFont = UIFont.systemFont(ofSize: 30)
-        var string = NSAttributedString(string: "Your credit score is", attributes: [NSAttributedString.Key.font: blackFont])
-        string.draw(at: CGPoint(x: center.x-120.0, y: center.y-70.0))
-        UIGraphicsPopContext()
-        UIGraphicsPushContext(context)
-        string = NSAttributedString(string: "out of \(Int(maxScore))", attributes: [NSAttributedString.Key.font: blackFont])
-        string.draw(at: CGPoint(x: center.x-80.0, y: center.y+60.0))
-        UIGraphicsPopContext()
-        // Draw the score text
-        UIGraphicsPushContext(context)
-        let scoreFont = UIFont.systemFont(ofSize: 90)
-        string = NSAttributedString(string: "\(Int(score))", attributes: [NSAttributedString.Key.font: scoreFont, NSAttributedString.Key.foregroundColor : UIColor.orange])
-        // Small hack to gestimate centering
-        var x_offset : CGFloat = 80.0
-        if score < 10 {
-            x_offset = 40.0
-        }
-        else if score < 100 {
-            x_offset = 60.0
-        }
-        string.draw(at: CGPoint(x: center.x - x_offset, y: center.y-40.0))
-        UIGraphicsPopContext()
     }
 
 }
