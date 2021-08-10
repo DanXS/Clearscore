@@ -9,14 +9,14 @@ import Foundation
 import Alamofire
 
 class API {
-    static func getCreditScore(url: URL, completion: @escaping (_ result: Any?, _ error: Error?) -> Void) {
+    static func getCreditScore(url: URL, completion: @escaping (_ result: CreditScore?, _ error: Error?) -> Void) {
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default)
                     .responseJSON { response in
                         if let status = response.response?.statusCode {
                             switch(status){
                             case 200:
-                                if let result = response.value {
-                                    completion(result, nil)
+                                if let json = response.value as? Dictionary<String, Any> {
+                                    completion(CreditScore(json: json), nil)
                                 }
                                 break
                             default:

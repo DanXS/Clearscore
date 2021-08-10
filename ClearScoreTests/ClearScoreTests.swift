@@ -27,12 +27,12 @@ class ClearScoreTests: XCTestCase {
         }
         // Expect the request to return within 5 seconds
         let expect = expectation(description: "Get mock credit score within 5 seconds")
-        API.getCreditScore(url: url) { (data, error) in
+        API.getCreditScore(url: url) { (creditScore, error) in
             if error != nil {
                 XCTFail(error.debugDescription)
             }
-            XCTAssertNotNil(data, "Data should not be nil")
-            debugPrint(data ?? "")
+            XCTAssertNotNil(creditScore, "Credit score should not be nil")
+            debugPrint("Max Score : \(creditScore?.maxScoreValue ?? 0), Score : \(creditScore?.score ?? 0)")
             expect.fulfill()
         }
         waitForExpectations(timeout: 5.0) { error in

@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2B78709801CCA26899713BCC /* Pods_ClearScore_ClearScoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31866B4B9EF00A5BB7F3094D /* Pods_ClearScore_ClearScoreUITests.framework */; };
 		32D9C098C4DEADC759ADD2EC /* Pods_ClearScoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E948F1351EA9067D1BC8EE55 /* Pods_ClearScoreTests.framework */; };
+		97077BFD26C2E3A700570DA1 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97077BFC26C2E3A700570DA1 /* CreditScore.swift */; };
+		97077C0126C2E86400570DA1 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97077BFC26C2E3A700570DA1 /* CreditScore.swift */; };
 		9796292226C2C1FF00FD5FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796292126C2C1FF00FD5FFB /* AppDelegate.swift */; };
 		9796292426C2C1FF00FD5FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796292326C2C1FF00FD5FFB /* SceneDelegate.swift */; };
 		9796292626C2C1FF00FD5FFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9796292526C2C1FF00FD5FFB /* ViewController.swift */; };
@@ -44,6 +46,7 @@
 		31866B4B9EF00A5BB7F3094D /* Pods_ClearScore_ClearScoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearScore_ClearScoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DFA7546D9CF0B8C42F6288 /* Pods_ClearScore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearScore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90243C0547B7468C9073C36D /* Pods-ClearScoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearScoreTests.debug.xcconfig"; path = "Target Support Files/Pods-ClearScoreTests/Pods-ClearScoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		97077BFC26C2E3A700570DA1 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
 		9796291E26C2C1FF00FD5FFB /* ClearScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9796292126C2C1FF00FD5FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9796292326C2C1FF00FD5FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		97077BFB26C2E33300570DA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97077BFC26C2E3A700570DA1 /* CreditScore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9796291526C2C1FF00FD5FFB = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +140,7 @@
 		9796292026C2C1FF00FD5FFB /* ClearScore */ = {
 			isa = PBXGroup;
 			children = (
+				97077BFB26C2E33300570DA1 /* Models */,
 				9796292126C2C1FF00FD5FFB /* AppDelegate.swift */,
 				9796292326C2C1FF00FD5FFB /* SceneDelegate.swift */,
 				9796292526C2C1FF00FD5FFB /* ViewController.swift */,
@@ -169,7 +181,6 @@
 				90243C0547B7468C9073C36D /* Pods-ClearScoreTests.debug.xcconfig */,
 				25BB9CDE936521F3A19DD821 /* Pods-ClearScoreTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -413,6 +424,7 @@
 			files = (
 				9796292626C2C1FF00FD5FFB /* ViewController.swift in Sources */,
 				9796292226C2C1FF00FD5FFB /* AppDelegate.swift in Sources */,
+				97077BFD26C2E3A700570DA1 /* CreditScore.swift in Sources */,
 				9796295526C2C5D600FD5FFB /* API.swift in Sources */,
 				9796292426C2C1FF00FD5FFB /* SceneDelegate.swift in Sources */,
 			);
@@ -424,6 +436,7 @@
 			files = (
 				9796295626C2C5D600FD5FFB /* API.swift in Sources */,
 				9796293926C2C20100FD5FFB /* ClearScoreTests.swift in Sources */,
+				97077C0126C2E86400570DA1 /* CreditScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
