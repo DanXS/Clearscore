@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import ClearScore
 
 class ClearScoreTests: XCTestCase {
@@ -18,15 +19,26 @@ class ClearScoreTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetCreditScore() throws {
+        // Mock credit score URL
+        guard let url = URL(string:"https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values") else {
+            XCTFail("Invalid URL")
+            return
+        }
+        // Expect the request to return within 5 seconds
+        let expect = expectation(description: "Get mock credit score within 5 seconds")
+        API.getCreditScore(url: url) { (data, error) in
+            if error != nil {
+                XCTFail(error.debugDescription)
+            }
+            XCTAssertNotNil(data, "Data should not be nil")
+            debugPrint(data ?? "")
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 5.0) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
 
